@@ -1,0 +1,329 @@
+\documentclass[landscape,final,a0paper]{baposter}
+
+
+\tracingstats=2
+
+\usepackage{url}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{bm}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\usepackage{pgfbaselayers}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{palatino}
+
+\newcommand{\captionfont}{\footnotesize}
+
+\selectcolormodel{cmyk}
+
+%\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Some math symbols used in the text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 
+
+\renewcommand{\Pr}{\mbox{P}}
+\newcommand{\e}{\mbox{e}}
+\newcommand{\dx}{\,\mbox{d}x}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+
+
+\makeatletter
+\renewcommand{\baposter@box@headerdrawtext@rectangle}[1]{
+  \path (\baposter@box@name nw) +(0.5\boxwidth,-0.5\baposter@box@@boxheaderheight) node[anchor=center] {#1};%
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some colors
+\definecolor{silver}{cmyk}{0,0,0,0.3}
+\definecolor{yellow}{cmyk}{0,0,0.9,0.0}
+\definecolor{reddishyellow}{cmyk}{0,0.22,1.0,0.0}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+\definecolor{darkYellow}{cmyk}{0,0,1.0,0.5}
+\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+\definecolor{lightyellow}{cmyk}{0,0,0.3,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lightestyellow}{cmyk}{0,0,0.05,0.0}
+\definecolor{cyan}{cmyk}{1,0,0,0}
+\definecolor{lightcyan}{cmyk}{0.5,0,0,0}
+\definecolor{pastelcyan}{cmyk}{0.25,0,0,0}
+\definecolor{magenta}{cmyk}{0,1,0,0}
+\definecolor{yellow}{cmyk}{0,0,1,0}
+\definecolor{lightyellow}{cmyk}{0,0,0.5,0}
+\definecolor{pastelyellow}{cmyk}{0,0,0.25,0}
+\definecolor{black}{cmyk}{0,0,0,1}
+\definecolor{darkgray}{cmyk}{0,0,0,0.75}
+\definecolor{gray}{cmyk}{0,0,0,0.5}
+\definecolor{lightgray}{cmyk}{0,0,0,0.25}
+\definecolor{white}{cmyk}{0,0,0,0}
+\definecolor{red}{cmyk}{0,1,1,0}
+\definecolor{orange}{cmyk}{0,0.5,1,0}
+\definecolor{scarlet}{cmyk}{0,1,0.5,0}
+\definecolor{brown}{cmyk}{0.5,0.75,1,0}
+\definecolor{camel}{cmyk}{0.25,0.375,0.5,0}
+\definecolor{cream}{cmyk}{0,0.2,0.3,0}
+\definecolor{green}{cmyk}{1,0,1,0}
+\definecolor{lightgreen}{cmyk}{0.5,0,0.5,0}
+\definecolor{pastelgreen}{cmyk}{0.25,0,0.25,0}
+\definecolor{mossgreen}{cmyk}{0.64,0.4,1,0}
+\definecolor{yellowgreen}{cmyk}{0.5,0,1,0}
+\definecolor{skyblue}{cmyk}{0.4,0.16,0,0}
+\definecolor{royal}{cmyk}{1.0,0.5,0,0}
+\definecolor{navyblue}{cmyk}{0.9,0.75,0.5,0}
+\definecolor{lightnavy}{cmyk}{0.4,0.3,0.2,0}
+\definecolor{blue}{cmyk}{1,1,0,0}
+\definecolor{lightblue}{cmyk}{0.5,0.5,0,0}
+\definecolor{pastelblue}{cmyk}{0.25,0.25,0,0}
+\definecolor{lightpastelblue}{cmyk}{0.15,0.15,0,0}
+\definecolor{lightestpastelblue}{cmyk}{0.05,0.05,0,0}
+\definecolor{lavender}{cmyk}{0.25,0.25,0,0}
+\definecolor{violet}{cmyk}{0.75,1,0.25,0}
+\definecolor{purple}{cmyk}{0.5,1,0.5,0}
+\definecolor{lightpurple}{cmyk}{0.25,0.5,0.25,0}
+\definecolor{pink}{cmyk}{0,0.5,0,0}
+
+
+%%
+
+\typeout{Poster Starts}
+%\background{
+  %\begin{tikzpicture}[remember picture,overlay]%
+  %  \draw (current page.north west)+(-2em,-2em) node[anchor=north west] %{\hspace{-2em}\includegraphics[height=1.1\textheight]{silhouettes_background}};
+ % \end{tikzpicture}%
+%}
+
+
+
+
+\newlength{\leftimgwidth}
+\begin{poster}%
+  % Poster Options, such as colours etc
+  {
+  % Show grid to help with alignment
+  grid=false,
+ % Column spacing
+  colspacing=1.5em,
+ % Color style
+ % bgColorOne=pastelblue,
+ %bgColorTwo=lightpastelblue,
+  bgColorOne=white,
+  bgColorTwo=white,
+  borderColor=white,
+  headerColorOne=navyblue,
+  headerColorTwo=purple,
+  headerFontColor=white,
+ % boxColorOne=lightpastelblue,
+ % boxColorTwo=lightestpastelblue,
+ boxColorOne=white,
+ boxColorTwo=white,
+ % Format of textbox
+  textborder=rectangle,
+% textborder=rectangle,
+% Format of text header
+  eyecatcher=true,
+  headerborder=open,
+  headerheight=0.1\textheight,
+  headershape=rectangle,
+  headershade=plain,
+  headerfont=\Large\textrm, %Sans Serif
+  boxshade=plain,
+  %background=shade-tb,
+ % background=plain,
+  background=none,
+  linewidth=2pt
+  }
+  % Eye Catcher
+  {\includegraphics[width=10em]{neural_network.jpeg}} % select eyecatcher=false above if not required. If no eye catcher is present, the title is left aligned.
+  % Title
+  {\sf %Sans Serif
+  %\bf% Serif
+  Can we beat CAPTCHA?}
+  % Authors
+  {\sf %Sans Serif
+  % Serif
+  \vspace{1em} 
+	Mohammad Mashrur Khondokar\\
+	Oral:  \url{}
+  }
+  % University logo
+  { % The makebox allows the title to flow into the logo
+    \makebox[8em][r]{%
+        \begin{minipage}{16em}
+				\hfill \includegraphics[height=3em]{imperial.pdf}
+				\end{minipage}
+      
+    }
+  }
+
+  \tikzstyle{light shaded}=[top color=baposterBGtwo!30!white,bottom color=baposterBGone!30!white,shading=axis,shading angle=30]
+
+  % Width of left inset image
+     \setlength{\leftimgwidth}{0.78em+8.0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Now define the boxes that make up the poster
+%%%---------------------------------------------------------------------------
+%%% Each box has a name and can be placed absolutely or relatively.
+%%% The only inconvenience is that you can only specify a relative position 
+%%% towards an already declared box. So if you have a box attached to the 
+%%% bottom, one to the top and a third one which should be in between, you 
+%%% have to specify the top and bottom boxes before you specify the middle 
+%%% box.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %
+    % A coloured circle useful as a bullet with an adjustably strong filling
+\newcommand{\colouredcircle}[1]{%
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=baposterBGone!80!black!#1!white,line width=0.03em] (0,0) circle(0.18em);}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{\centering Motivation}{name=motiv, column=0, row=0}{
+Classification. Can we 'teach' a machine the ability of classification: can a machine learn how to group data based on (sometimes obscure) patterns that are involved? \\
+In this classification problem, we will try to train a computer on a dataset of numbers with various backgrounds and rotations, angles, etc. Perhaps the most prevalent application of this would be to beat CAPTCHA. CAPTCHA is something that is perhaps ubiquitous in this internet age, and most of us are aware of it (and its annoyance!) and how machines supposedly can't pass the test... yet
+\vspace{0.3em}
+
+}
+
+\headerbox{\centering How do we teach a Machine?}{name=teach, column=0, below=motiv}{
+
+Machine learning is a field that has existed for many decades now: naturally, over the years a large variety machine learning algorithms that have developed. However, given that the dataset that we're using is that of images, which are hard to handle, our options narrow down. Specifically, the kind of model that we will study are Neural Networks which form the basis of Deep Learning. \\
+
+\includegraphics[width=10em]{neural network 2.png}
+\\
+
+But what is a neural network, you might ask? Well, like our brains can be thought of as complex graphs of neurones, a neural network is a graph made up of multiple ‘layers’ of neurones, which are connected to all the neurones of consecutive layers. Each of the neurones hold a number, known as an activation, and, much like the activation of a neurone in our brain affects that of others, the activations of one layer affect the next and so on. Each layer has an activation function that helps rescale our activations to let certain features be emphasised. Eventually, it outputs a vector of probabilities (with dimension equal to the number of classes) that tells us what class a specific input it ‘thinks’ it belongs in.
+}
+
+
+\headerbox{What Types of Neural Networks?}{name=types, column=1, span=2}{
+Although we have focused on a specific part of Machine Learning there are still many types of neural networks. We will be considering two types: (normal) Neural networks, and Convolutional Neural Networks. \\
+We're already familiar with a (normal) neural network, so let us move our attention to CNN's. \\
+A Convolutional Neural Network has Convolution Layers. These take a kernel, multiply it component-by-component with a sub-section of the input matrix, sum all of these products, repeat by ‘striding’ across the matrix, and creating a smaller matrix. This lets the model take in 2D images, and lose no spatial data
+
+}
+
+
+\headerbox{Neural Network Architectures}{name=arch, column=1, span=2, below=types}{
+\begin{minipage}[c]{4cm}
+\includegraphics[width=5em]{CNN architecture.JPG}
+\includegraphics[width=5em]{normal neural network architecture.JPG}
+\end{minipage}
+\begin{minipage}[c]{12cm}
+Before our comparison, we must define the architecture of our models. As such, I have provided two diagrams that give us an overview of each neural network.
+
+\begin{itemize}
+\item We already know what a convolution layer does, and a dense layer is just a normal layer.
+\item The flatten layer flattens the matrix into a vector.
+\item The max pooling layer takes disjoint subsections of the matrix, and takes the max value in them, to downscale the image.
+\item The Dropout layer disables a fixed proportion of neurones at random.
+\end{itemize}
+
+Every layer except the uses the ReLU (Rectified Linear Unit) activation function, defined as $f(x)=x^{+}=\max(0,x)$\\
+\includegraphics[width=3em]{ReLU graph.JPG}\\
+The output layers use the softmax function. This function takes in a vector, and outputs a vector of values from 0 to 1. It's defined as $\sigma(x)_i=\frac{e^{x_i}}{\sum_{j=1}^{K}e^{x_j}}$\\
+We will also consider 2 more models with the same architectures, but with the data augmented
+
+\end{minipage}
+
+
+}
+
+\headerbox{Results}{name=results, column=1, span=2, below=arch}{
+
+\begin{minipage}[c]{6cm}
+\includegraphics[width=2.5cm]{Synthetic digits train vs test graph.JPG}
+\includegraphics[width=2.5cm]{Synthetic digits CNN train vs test graph.JPG}
+\includegraphics[width=2.5cm]{Synthetic digits train vs test with data augmentation graph.JPG}
+\includegraphics[width=2.5cm]{Synthetic digits CNN train vs test graph.JPG}
+\end{minipage}
+\begin{minipage}[c]{10cm}
+As we can see from these graphs, our Model 1 and Model 2, without data augmentation, both overfit. The former overfits greatly while the latter doesn't suffer from it as much. \\
+If we look at the models that involve data augmentation, we see improvements in terms of overfitting, but drawbacks in other areas.
+Both Model 3 and 4 appear to be somewhat rid of overfitting, but suffer when it comes to accuracy.\\
+For summary the final results are as follows:
+\begin{tabular}{c|c c}
+     Model & Training Accuracy & Test Accuracy  \\ \hline
+    Model 1 & 0.9607 & 0.7665 \\
+    Model 2 & 0.9968 & 0.9735 \\
+    Model 3 & 0.5405 & 0.5695 \\
+    Model 4 & 0.9644 & 0.9570
+\end{tabular}
+
+
+\end{minipage}
+}
+
+\headerbox{Conclusion}{name=conc, column=3, row=0}{
+
+We have now trained all of our models, and may make a recommendation as to which model is best for our Classification Problem. \\
+I recommend Model 2. While it isn’t perfect, and suffers from overfitting, which could mean it may not generalise well, it has the greatest accuracy, so I believe it would perform the best in a real-world application, such as CAPTCHA.  \\
+There are known drawbacks to this Deep Learning approach however.  \\
+Neural networks are a computationally intensive classifier to train: however Model 2 ran fine on a Ryzen 5 3500U (all actual results were ran on a local CUDA-enabled GPU), which ran at around only ${70}^\circ C$, and the model only occupied 200MB of RAM: the same holds for GPU VRAM. When we used it to generate a prediction given an image, it only required 0.17 seconds.
+
+Another concern would be interpretability. Neural networks lack interpretability: it's the same as asking a human $why$ they have a certain thought. However for our goal of beating CAPTCHA, $why$ a model generates a prediction when faced with the test is irrelevant at best.
+
+In conclusion, despite the concerns raised, I recommend Model 2 for this Classification Problem, and I certainly believe that we can beat CAPTCHA (it’s also probably been done already, though maybe not using Deep Learning).
+}
+
+\headerbox{References}{name=ref, column=3, below=conc}{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{poster}
+
+\end{document}
